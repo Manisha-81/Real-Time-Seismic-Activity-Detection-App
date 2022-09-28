@@ -1,5 +1,5 @@
 Flask==2.0.3
-gunicorn==20.1.0
+gunicorn
 numpy==1.21.6
 pickleshare==0.7.5
 jsonschema==4.0.1
