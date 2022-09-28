@@ -1,1 +1,1 @@
-worker:python Server.py
+web: gunicorn app:app
