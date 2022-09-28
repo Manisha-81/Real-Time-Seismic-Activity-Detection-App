@@ -3,7 +3,7 @@ from flask import Flask, render_template, jsonify, request
 import numpy as np
 import pickle
 
-model = pickle.load(open(r"K:\DAQHATS_DATA\MCCDAQ_NO-Disturbance_Disturbance_SVM_Model.sav", 'rb'))
+model = pickle.load(open("MCCDAQ_NO-Disturbance_Disturbance_SVM_Model.sav", 'rb'))
 
 app = Flask(__name__)
 count = 0
@@ -25,7 +25,7 @@ def model_predict():
 def get_feature():
     global prediction
     if request.json:
-        f = json.loads(request.json)  # request.content_length()
+        f = json.loads(request.json)
         f = np.array(f)
         predicted_value = model.predict(f.reshape(1, 28))
         if predicted_value == [0]:
